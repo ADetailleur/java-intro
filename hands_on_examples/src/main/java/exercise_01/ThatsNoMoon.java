@@ -34,7 +34,7 @@ public class ThatsNoMoon extends JApplet implements Runnable {
 		 * or, in the short version which is equivalent:
 		 *  	iconCoordinateX += 1;
 		 */
-		iconCoordinateX += 1;
+
 		
 	}
 	
