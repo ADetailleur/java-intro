@@ -14,10 +14,7 @@ import javax.swing.JPanel;
 public class ThatsNoMoon extends JApplet implements Runnable {
 	
 	private Image icon = loadIcon();
-	
-	private int windowWidth = 800;
-	private int windowHeight = 600;
-	
+
 	private int iconCoordinateX = 100;
 	private int iconCoordinateY = 50;
 	
@@ -34,17 +31,30 @@ public class ThatsNoMoon extends JApplet implements Runnable {
 		 * or, in the short version which is equivalent:
 		 *  	iconCoordinateX += 1;
 		 */
-
+		
 		
 	}
 	
 	
 	
+	/*
+	 * Some additional help: 
+	 * 
+	 * Get the width (and analogous, the height) of the icon with this call:
+	 *  	icon.getWidth(null)
+	 *  
+	 *  Get the width (and analogous, the height) of the window with this call:
+	 *  	getWidth()
+	 */
+	
 
 	
 	
 	
 
+	
+	
+	
 	
 	
 	
@@ -67,8 +77,7 @@ public class ThatsNoMoon extends JApplet implements Runnable {
 	
 	private void configureWindow() {
 		background.setBackground(Color.BLACK);
-		setSize(windowWidth, windowHeight);
-		sleepMilliseconds(200);
+		setSize(initialWindowWidth, initialWindowHeight);
 	}
 	
 	/**
@@ -101,7 +110,6 @@ public class ThatsNoMoon extends JApplet implements Runnable {
 		
 		add(background);
 		configureWindow();
-		loadIcon();
 		
 		new Thread(this).start();
 	}
@@ -126,5 +134,9 @@ public class ThatsNoMoon extends JApplet implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel background;
+	
+	
+	private int initialWindowWidth = 800;
+	private int initialWindowHeight = 600;
 	
 }
