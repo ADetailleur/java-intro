@@ -11,18 +11,18 @@ import javax.imageio.ImageIO;
 import javax.swing.JApplet;
 import javax.swing.JPanel;
 
-public class ThatsNoMoon extends JApplet implements Runnable {
+class ThatsNoMoon extends JApplet implements Runnable {
 	
-	private Image icon = loadIcon();
+	Image icon = loadIcon();
 
-	private int iconCoordinateX = 100;
-	private int iconCoordinateY = 50;
+	int iconCoordinateX = 100;
+	int iconCoordinateY = 50;
 	
 	/**
 	 * This method is periodically called. You can manipulate the x and y coordinates. 
 	 * See what happens if you do that and start the program.
 	 */
-	private void updateValues() {
+	void updateValues() {
 		
 		/*
 		 * Add code to update the coordinates of the icon, for example like this:
@@ -33,25 +33,63 @@ public class ThatsNoMoon extends JApplet implements Runnable {
 		 */
 		
 		
+		
+		
+	
+	
+	
+	
+		/*
+		 * Some additional help: 
+		 * 
+		 * Get the width (and analogous, the height) of the icon with this call:
+		 *  	icon.getWidth(null)
+		 *  
+		 *  Get the width (and analogous, the height) of the window with this call:
+		 *  	getWidth()
+		 *  
+		 *  Oh, and introduce a variable 'speed' instead of the constant number. Put it
+		 *  up to the coordinate definitions.
+		 */
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		 * More help: 
+		 * 
+		 * Use a branch to let the moon change direction at the border. This could look as follows.
+		 * (Certainly you need to replace the textual boolean condition with real code!)
+		 * 
+		 * 	 if (coordinates are larger than the window size) {
+		 * 		speed = - speed;
+		 * 	 }
+		 */
+		
+		
+	
+		
+		/*
+		 * Even more help: 
+		 * 
+		 * For acceleration, also change the speed variable:
+		 * 
+		 *   speed = speed + 1; // This would be the acceleration
+		 *   iconCoordinateY = iconCoordinateY + speed;
+		 */
+		
 	}
 	
 	
 	
-	/*
-	 * Some additional help: 
-	 * 
-	 * Get the width (and analogous, the height) of the icon with this call:
-	 *  	icon.getWidth(null)
-	 *  
-	 *  Get the width (and analogous, the height) of the window with this call:
-	 *  	getWidth()
-	 */
-	
-
 	
 	
 	
-
 	
 	
 	
