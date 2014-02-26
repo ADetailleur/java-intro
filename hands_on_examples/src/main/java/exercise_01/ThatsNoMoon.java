@@ -113,6 +113,9 @@ class ThatsNoMoon extends JApplet implements Runnable {
 		}
 	}
 	
+	/**
+	 * Does the initial configuration of the program window.
+	 */
 	private void configureWindow() {
 		background.setBackground(Color.BLACK);
 		setSize(initialWindowWidth, initialWindowHeight);
@@ -169,11 +172,9 @@ class ThatsNoMoon extends JApplet implements Runnable {
 		}
 		return null;
 	}
-
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel background;
-	
-	
 	private int initialWindowWidth = 800;
 	private int initialWindowHeight = 600;
 	
