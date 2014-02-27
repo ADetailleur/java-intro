@@ -22,8 +22,8 @@ public class ImageLoader {
 			 * Icon by http://www.artua.com/, retrieved here:
 			 * http://www.iconarchive.com/show/star-wars-icons-by-artua.html
 			 */
-			return ImageIO.read(new File(fileName));
-		} catch (IOException e) {
+      return ImageIO.read(getClass().getClassLoader().getResource(fileName));
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
