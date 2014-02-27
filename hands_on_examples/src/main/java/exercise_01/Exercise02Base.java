@@ -1,12 +1,14 @@
 package exercise_01;
 
-import exercise_02.ImageLoader;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
+import javax.swing.JApplet;
+import javax.swing.JPanel;
+
+import exercise_02.ImageLoader;
 
 /**
  * Abstract base class for ThatsNoMoon which does all the heavy work.
@@ -24,7 +26,7 @@ public abstract class Exercise02Base extends JApplet implements Runnable {
 
   @Override
   public void run() {
-    while(true) {
+    while (true) {
       updateValues();
       repaint();
       sleepMilliseconds(20);
@@ -41,8 +43,9 @@ public abstract class Exercise02Base extends JApplet implements Runnable {
 
   /**
    * Lets the thread sleep for the number of milliseconds provided.
-   *
-   * @param milliseconds how long should I sleep?
+   * 
+   * @param milliseconds
+   *          how long should I sleep?
    */
   private void sleepMilliseconds(long milliseconds) {
     try {
@@ -73,11 +76,10 @@ public abstract class Exercise02Base extends JApplet implements Runnable {
     new Thread(this).start();
   }
 
-
-
   /**
-   * Loads the icon and returns an images which is paintable by the drawImage method.
-   *
+   * Loads the icon and returns an images which is paintable by the drawImage
+   * method.
+   * 
    * @return loaded icon, or null if there were problems loading it.
    */
   protected Image loadIcon() {

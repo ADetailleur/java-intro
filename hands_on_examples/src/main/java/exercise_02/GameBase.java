@@ -9,19 +9,25 @@ import java.util.*;
 /**
  * @author: nw.
  */
-public abstract class Exercise03Base extends JApplet {
+public abstract class GameBase extends JApplet {
 
   /* Below some configuration stuff. Ignore for now. If you're bold, you can play around with it a bit. */
 
+  private static final long serialVersionUID = 1L;
+
+  private GameBoard gameBoard;
+  
   private int fieldSize = 48;
 
-  private int horizontalFields = 18;
-  private int verticalFields = 12;
+  private int horizontalFields;
+  private int verticalFields;
 
   protected abstract void configureGame();
 
-  protected abstract void makeTurn();
-
+  protected abstract void moveElements();
+  
+  protected abstract void displayFinalResult();
+  
   protected int getHorizontalFields() {
     return horizontalFields;
   }
@@ -37,6 +43,29 @@ public abstract class Exercise03Base extends JApplet {
     System.out.println(message);
   }
 
+  private void makeTurn() {
+    if (isGameFinished()) {
+      displayFinalResult();
+    }
+    else {
+      moveElements();
+    }
+  }
+
+  private boolean isGameFinished() {
+    return false;
+  }
+
+  
+  protected void initializeGameBoard(int horizontalFields, int verticalFields) {
+    this.horizontalFields = horizontalFields;
+    this.verticalFields = verticalFields;
+    gameBoard = new GameBoard(horizontalFields, verticalFields);
+  }
+  
+  protected GameBoard getGameBoard() {
+    return gameBoard;
+  }
 
   private JPanel background;
 
@@ -64,7 +93,7 @@ public abstract class Exercise03Base extends JApplet {
         }
 
         // Draw game elements
-        for (GameBoardElement element : gameboard.getElements()) {
+        for (GameBoardElement element : gameBoard.getElements()) {
 
           drawShadowTo(g2, element.getCurrentPosition());
           drawElementTo(g2, element);
@@ -127,6 +156,6 @@ public abstract class Exercise03Base extends JApplet {
   private Image tile3 = loader.loadIcon("tile3.png");
   private Image shadow = loader.loadIcon("shadow.png");
 
-  private static final long serialVersionUID = 1L;
+  
 
 }

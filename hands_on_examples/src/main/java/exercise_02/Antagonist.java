@@ -3,13 +3,13 @@ package exercise_02;
 import java.awt.*;
 
 /**
- * This is the hero of the game.
+ * This is the villain of the game.
  */
-public class Protagonist implements GameBoardElement {
+public class Antagonist implements GameBoardElement {
 
 	private Position position;
 
-	public Protagonist(Position position) {
+	public Antagonist(Position position) {
 		this.position = position;
 	}
 
@@ -24,7 +24,7 @@ public class Protagonist implements GameBoardElement {
 		 * Icon by http://www.artua.com/, retrieved here:
 		 * http://www.iconarchive.com/show/star-wars-icons-by-artua.html
 		 */
-		return new ImageLoader().loadIcon("protagonist.png");
+		return new ImageLoader().loadIcon("antagonist.png");
 	}
 
 }
