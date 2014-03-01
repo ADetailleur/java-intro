@@ -1,24 +1,25 @@
 package exercise_02;
 
-import java.awt.Image;
+import java.awt.*;
 import java.util.Collection;
 
 /**
- * The friendly helpers of the protagonist.
+ * This is the hero of the game.
  */
-public class Robot extends RebelAllianceMember {
+public class Protagonist extends RebelAllianceMember implements UserControlled {
 
   /*
    * Icon by http://www.artua.com/, retrieved here:
    * http://www.iconarchive.com/show/star-wars-icons-by-artua.html
    */
-  private static Image icon = new ImageLoader().loadIcon("robot.png");
+  private static Image icon = new ImageLoader().loadIcon("protagonist.png");
   
-  private static final int INITIAL_POWER = 15;
+  private static final int INITIAL_POWER = 30;
   
 	private Position position;
-
-	public Robot(Position position) {
+	
+	
+	public Protagonist(Position position) {
 		this.position = position;
 		setPower(INITIAL_POWER);
 	}
@@ -35,12 +36,17 @@ public class Robot extends RebelAllianceMember {
 
 	@Override
 	public Image getImage() {
-		return icon; 
+		return icon;
 	}
 
   @Override
   public Position calculateNextPosition(Collection<GameBoardElement> elements) {
     return null;
+  }
+
+  @Override
+  public Position calculateNextPositionByUserInput(UserInput userInput) {
+    return new UserInputPositionStrategy(position, userInput).findNextPosition(null);
   }
 
 }
