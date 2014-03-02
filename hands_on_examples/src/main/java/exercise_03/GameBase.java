@@ -1,9 +1,9 @@
-package exercise_02;
+package exercise_03;
 
-import static exercise_02.UserInput.DOWN;
-import static exercise_02.UserInput.LEFT;
-import static exercise_02.UserInput.RIGHT;
-import static exercise_02.UserInput.UP;
+import static exercise_03.positionfindstrategies.UserInput.DOWN;
+import static exercise_03.positionfindstrategies.UserInput.LEFT;
+import static exercise_03.positionfindstrategies.UserInput.RIGHT;
+import static exercise_03.positionfindstrategies.UserInput.UP;
 import static java.awt.event.KeyEvent.VK_DOWN;
 import static java.awt.event.KeyEvent.VK_KP_DOWN;
 import static java.awt.event.KeyEvent.VK_KP_LEFT;
@@ -13,12 +13,30 @@ import static java.awt.event.KeyEvent.VK_LEFT;
 import static java.awt.event.KeyEvent.VK_RIGHT;
 import static java.awt.event.KeyEvent.VK_UP;
 
-import javax.swing.*;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Random;
+
+import javax.swing.JApplet;
+import javax.swing.JPanel;
+
+import exercise_03.gameboard.FactionMember;
+import exercise_03.gameboard.GameBoard;
+import exercise_03.gameboard.GameBoardElement;
+import exercise_03.gameboard.Position;
+import exercise_03.gameboard.UserControlled;
+import exercise_03.positionfindstrategies.UserInput;
+import exercise_03.utils.ImageLoader;
 
 /**
  * Abstract base class for NotTheDroidsWeAreLookingFor which does all the heavy work.
@@ -231,6 +249,34 @@ public abstract class GameBase extends JApplet {
     graphics2d.drawString(text, (getWidth() - messageWidth) / 2, (getHeight() - messageHeight) / 2);
     graphics2d.setColor(Color.WHITE);
     graphics2d.drawString(text, 3 + (getWidth() - messageWidth) / 2, 3 + (getHeight() - messageHeight) / 2);
+  }
+  
+  /**
+   * Creates a copy of a list.
+   */
+  protected <T> List<T> copyList(Collection<T> list) {
+    return new ArrayList<T>(list);
+  }
+  
+  /**
+   * Lets the thread sleep for the number of milliseconds provided.
+   * 
+   * @param milliseconds
+   *          how long should I sleep?
+   */
+  protected void sleepMilliseconds(long milliseconds) {
+    try {
+      Thread.sleep(milliseconds);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+  
+  /**
+   * Determines whether this element is user controlled.
+   */
+  protected boolean isUserControlled(GameBoardElement element) {
+    return element instanceof UserControlled;
   }
 
 }

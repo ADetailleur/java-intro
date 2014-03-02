@@ -1,4 +1,4 @@
-package exercise_02;
+package exercise_03.gameboard;
 
 import java.awt.*;
 import java.util.Collection;

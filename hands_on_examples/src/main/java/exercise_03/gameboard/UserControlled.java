@@ -1,4 +1,6 @@
-package exercise_02;
+package exercise_03.gameboard;
+
+import exercise_03.positionfindstrategies.UserInput;
 
 public interface UserControlled {
 

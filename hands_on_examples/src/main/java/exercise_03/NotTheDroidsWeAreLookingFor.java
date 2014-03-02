@@ -1,7 +1,15 @@
-package exercise_02;
+package exercise_03;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import exercise_03.alliance.Protagonist;
+import exercise_03.alliance.Robot;
+import exercise_03.empire.Soldier;
+import exercise_03.gameboard.GameBoard;
+import exercise_03.gameboard.GameBoardElement;
+import exercise_03.gameboard.Position;
+import exercise_03.gameboard.UserControlled;
+import exercise_03.positionfindstrategies.UserInput;
+
+
 
 
 public class NotTheDroidsWeAreLookingFor extends GameBase {
@@ -40,15 +48,15 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 		System.out.println("Turn triggered by user input: " + userInput);
 		
 		GameBoard gameBoard = getGameBoard();
-		Collection<GameBoardElement> allElements = gameBoard.getAllElements();
-		for (GameBoardElement element : new ArrayList<GameBoardElement>(allElements)) {
+		
+		for (GameBoardElement element : copyList(gameBoard.getAllElements())) {
 		  Position newPosition;
 		  
-		  if (element instanceof UserControlled) {
+		  if (isUserControlled(element)) {
 		    newPosition = ((UserControlled) element).calculateNextPositionByUserInput(userInput);
 		  }
 		  else {
-		    newPosition = element.calculateNextPosition(allElements);
+		    newPosition = element.calculateNextPosition(gameBoard.getAllElements());
 		  }
 		 
 		  gameBoard.performTurnTo(element, newPosition);
@@ -78,4 +86,5 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 	
 	
 	private static final long serialVersionUID = 1L;
+	
 }

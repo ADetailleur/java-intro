@@ -1,4 +1,4 @@
-package exercise_02;
+package exercise_03.utils;
 
 import java.awt.Image;
 

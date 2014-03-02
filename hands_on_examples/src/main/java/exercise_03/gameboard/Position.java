@@ -1,4 +1,4 @@
-package exercise_02;
+package exercise_03.gameboard;
 
 /**
  * Holds a cartesian position information.
@@ -8,7 +8,7 @@ public class Position {
   private int x;
   private int y;
 
-  Position(int x, int y) {
+  public Position(int x, int y) {
     this.x = x;
     this.y = y;
   }

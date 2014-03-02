@@ -1,7 +1,12 @@
-package exercise_02;
+package exercise_03.empire;
 
 import java.awt.Image;
 import java.util.Collection;
+
+import exercise_03.gameboard.GameBoardElement;
+import exercise_03.gameboard.Position;
+import exercise_03.positionfindstrategies.RandomNextPositionStrategy;
+import exercise_03.utils.ImageLoader;
 
 public class Soldier extends GalacticEmpireMember {
 
@@ -38,7 +43,7 @@ public class Soldier extends GalacticEmpireMember {
 
   @Override
   public Position calculateNextPosition(Collection<GameBoardElement> elements) {
-    return null;
+    return new RandomNextPositionStrategy().findNextPosition(position, elements);
   }
 
 }

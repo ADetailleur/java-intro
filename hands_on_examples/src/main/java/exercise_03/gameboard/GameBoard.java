@@ -1,4 +1,4 @@
-package exercise_02;
+package exercise_03.gameboard;
 
 import java.util.*;
 
@@ -101,10 +101,13 @@ public class GameBoard {
     }
     
     if (positionIsAlreadyTaken(newPosition)) {
+      
       GameBoardElement otherElement = positionLookup.get(newPosition);
+      
       if (isFactionMember(element) && isFactionMember(otherElement)) {
         fightAgainst((FactionMember) element, (FactionMember) otherElement);
       }
+      
     }
     else {
       moveElementTo(element, newPosition);
@@ -125,11 +128,13 @@ public class GameBoard {
     
     if (defender.isDead()) {
       remove(defender);
+      
       System.out.println(defender + " dies");
     }
 
     if (offender.isDead()) {
       remove(offender);
+      
       System.out.println(offender + " dies");
     }
     else {

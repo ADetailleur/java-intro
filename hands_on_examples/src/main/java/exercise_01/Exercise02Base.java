@@ -8,7 +8,7 @@ import java.awt.Image;
 import javax.swing.JApplet;
 import javax.swing.JPanel;
 
-import exercise_02.ImageLoader;
+import exercise_03.utils.ImageLoader;
 
 /**
  * Abstract base class for ThatsNoMoon which does all the heavy work.

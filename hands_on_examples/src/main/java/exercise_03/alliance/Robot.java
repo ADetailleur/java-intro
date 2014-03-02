@@ -1,7 +1,11 @@
-package exercise_02;
+package exercise_03.alliance;
 
 import java.awt.Image;
 import java.util.Collection;
+
+import exercise_03.gameboard.GameBoardElement;
+import exercise_03.gameboard.Position;
+import exercise_03.utils.ImageLoader;
 
 /**
  * The friendly helpers of the protagonist.
@@ -40,7 +44,7 @@ public class Robot extends RebelAllianceMember {
 
   @Override
   public Position calculateNextPosition(Collection<GameBoardElement> elements) {
-    return null;
+    return position;
   }
 
 }

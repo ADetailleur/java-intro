@@ -1,22 +1,24 @@
-package exercise_02;
+package exercise_03.positionfindstrategies;
 
 import java.util.Collection;
 
+import exercise_03.gameboard.FindNextPositionStrategy;
+import exercise_03.gameboard.GameBoardElement;
+import exercise_03.gameboard.Position;
+
 public class UserInputPositionStrategy implements FindNextPositionStrategy {
 
-  private Position position;
   private UserInput userInput;
 
-  public UserInputPositionStrategy(Position position, UserInput userInput) {
-    this.position = position;
+  public UserInputPositionStrategy(UserInput userInput) {
     this.userInput = userInput;
   }
   
   @Override
-  public Position findNextPosition(Collection<GameBoardElement> elements) {
+  public Position findNextPosition(Position ownPosition, Collection<GameBoardElement> allElements) {
     
-    int x = position.getX();
-    int y = position.getY();
+    int x = ownPosition.getX();
+    int y = ownPosition.getY();
     
     if (userInput == UserInput.UP) {
       y -= 1;
