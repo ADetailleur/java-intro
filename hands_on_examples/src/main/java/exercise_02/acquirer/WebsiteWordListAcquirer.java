@@ -108,7 +108,7 @@ public class WebsiteWordListAcquirer implements WordListAcquirer {
   private boolean isAcceptable(String word) {
      boolean acceptable = true;
      
-     if (word.length() <= 3 || 16 < word.length()) {
+     if (word.length() <= 2 || 16 < word.length()) {
        return false;
      }
      
