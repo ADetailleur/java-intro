@@ -18,12 +18,13 @@ public class ThatsNoMoon extends Exercise02Base {
 
     /*
      * Add code to update the coordinates of the icon, for example like this:
-     * iconCoordinateX = iconCoordinateX + 1;
+     *    iconCoordinateX = iconCoordinateX + 1;
      * 
-     * or, in the short version which is equivalent: iconCoordinateX += 1;
+     * or, in the short version which is equivalent: 
+     *    iconCoordinateX += 1;
      */
 
-    
+
     
     
     
@@ -40,10 +41,10 @@ public class ThatsNoMoon extends Exercise02Base {
      * Some additional help:
      * 
      * Get the width (and analogous, the height) of the icon with this call:
-     * icon.getWidth(null)
+     *    icon.getWidth(null)
      * 
      * Get the width (and analogous, the height) of the window with this call:
-     * getWidth()
+     *    getWidth()
      * 
      * Oh, and introduce a variable 'speed' instead of the constant number. Put
      * it up to the coordinate definitions.
@@ -70,7 +71,9 @@ public class ThatsNoMoon extends Exercise02Base {
      * look as follows. (Certainly you need to replace the textual boolean
      * condition with real code!)
      * 
-     * if (coordinates are larger than the window size) { speed = - speed; }
+     *    if (coordinates are larger than the window size) { 
+     *      speed = - speed; 
+     *    }
      */
 
     
@@ -91,8 +94,8 @@ public class ThatsNoMoon extends Exercise02Base {
      * 
      * For acceleration, also change the speed variable:
      * 
-     * speed = speed + 1; // This would be the acceleration iconCoordinateY =
-     * iconCoordinateY + speed;
+     *    speed = speed + 1; // This would be the acceleration 
+     *    iconCoordinateY = iconCoordinateY + speed;
      */
 
     

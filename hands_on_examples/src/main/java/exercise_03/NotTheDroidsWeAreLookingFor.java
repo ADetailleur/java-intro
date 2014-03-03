@@ -9,9 +9,6 @@ import exercise_03.gameboard.Position;
 import exercise_03.gameboard.UserControlled;
 import exercise_03.positionfindstrategies.UserInput;
 
-
-
-
 public class NotTheDroidsWeAreLookingFor extends GameBase {
   
   public NotTheDroidsWeAreLookingFor() {
@@ -35,7 +32,7 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 		/*
 		 * Add antagonist:
 		 * - Create new class 'Antagonist' which implements the interface 'GameBoardElement'. 
-		 *   Let it use the 'antagonist.png' icon. You can use the StormTrooper as example.
+		 *   Let it use the 'antagonist.png' icon. You can use the Soldier as example.
 		 *   Then, add it to the gameboard.
 		 */
 		
