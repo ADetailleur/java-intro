@@ -39,6 +39,7 @@ class WebDataCrawler {
     // Add the word lists from CNN, The Guardian and The Independent to the
     // distribution map.
 
+
     
     
     
@@ -53,12 +54,18 @@ class WebDataCrawler {
     
     
     TreeMap<String, Integer> sortedMap = sortMapByOccurrences(distributionMap);
-
-    // Only display values with an occurrence of five or more.
     System.out.println(sortedMap);
 
+    // Now only display values with an occurrence of five or more.
+
+    
+    
+    
+    
     // If you convert all words to lower case before adding to the distribution map, would that make the distribution
     // more interesting?
+    
+    
     
     
   }
