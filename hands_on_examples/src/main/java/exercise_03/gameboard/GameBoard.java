@@ -2,6 +2,8 @@ package exercise_03.gameboard;
 
 import java.util.*;
 
+import exercise_03.positionfindstrategies.UserInput;
+
 /**
  * The game board holds information about all game board elements.
  */
@@ -123,19 +125,18 @@ public class GameBoard {
       return;
     }
     
-    System.out.println("FIGHT: " + offender + " vs " + defender);
     offender.fightWith(defender);
     
     if (defender.isDead()) {
       remove(defender);
       
-      System.out.println(defender + " dies");
+      print(defender + " dies");
     }
 
     if (offender.isDead()) {
       remove(offender);
       
-      System.out.println(offender + " dies");
+      print(offender + " dies");
     }
     else {
       moveElementTo(offender, defender.getCurrentPosition());
@@ -153,6 +154,39 @@ public class GameBoard {
 
   private boolean isFactionMember(GameBoardElement element) {
     return (element instanceof FactionMember);
+  }
+  
+  public void makeTurnWithUserInput(UserInput userInput) {
+    for (GameBoardElement element : copyList(getAllElements())) {
+      Position newPosition;
+      
+      if (isUserControlled(element)) {
+        newPosition = ((UserControlled) element).calculateNextPositionByUserInput(userInput);
+      }
+      else {
+        newPosition = element.calculateNextPosition(getAllElements());
+      }
+     
+      performTurnTo(element, newPosition);
+    }
+  }
+  
+  /**
+   * Determines whether this element is user controlled.
+   */
+  protected boolean isUserControlled(GameBoardElement element) {
+    return element instanceof UserControlled;
+  }
+  
+  /**
+   * Creates a copy of a list.
+   */
+  protected <T> List<T> copyList(Collection<T> list) {
+    return new ArrayList<T>(list);
+  }
+  
+  private void print(String message) {
+    System.out.println(message);
   }
   
 }

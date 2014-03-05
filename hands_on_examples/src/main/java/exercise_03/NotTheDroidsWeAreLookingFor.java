@@ -4,9 +4,7 @@ import exercise_03.alliance.Protagonist;
 import exercise_03.alliance.Robot;
 import exercise_03.empire.Soldier;
 import exercise_03.gameboard.GameBoard;
-import exercise_03.gameboard.GameBoardElement;
 import exercise_03.gameboard.Position;
-import exercise_03.gameboard.UserControlled;
 import exercise_03.positionfindstrategies.UserInput;
 
 public class NotTheDroidsWeAreLookingFor extends GameBase {
@@ -43,24 +41,10 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 	 */
 	public void makeTurn(UserInput userInput) {
 		System.out.println("Turn triggered by user input: " + userInput);
-		
 		GameBoard gameBoard = getGameBoard();
-		
-		for (GameBoardElement element : copyList(gameBoard.getAllElements())) {
-		  Position newPosition;
-		  
-		  if (isUserControlled(element)) {
-		    newPosition = ((UserControlled) element).calculateNextPositionByUserInput(userInput);
-		  }
-		  else {
-		    newPosition = element.calculateNextPosition(gameBoard.getAllElements());
-		  }
-		 
-		  gameBoard.performTurnTo(element, newPosition);
-		}
+		gameBoard.makeTurnWithUserInput(userInput);
 	}
 	
-
 	
 	/** 
 	 * Is called at the end of every turn.
