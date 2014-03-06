@@ -33,8 +33,7 @@ public class WebServer implements Runnable {
       serverSocket = new ServerSocket();
       serverSocket.bind(localAddress);
 
-      System.out.println("Webserver started on http://"
-          + localAddress.getHostString() + ":" + localAddress.getPort());
+      System.out.println("Webserver started on http://" + localAddress.getHostString() + ":" + localAddress.getPort());
 
       while (true) {
         Socket socket = serverSocket.accept();
@@ -58,9 +57,11 @@ public class WebServer implements Runnable {
       @Override
       public void run() {
         try {
-          String request = new BufferedReader(new InputStreamReader(socket.getInputStream())).readLine();
-          String[] requestParts = request.split(" ");
-          String result = requestHandler.handle(requestParts[1].substring(1));
+          String queryString = getQueryString(socket);
+          
+          System.out.println("Handling request from " + getRemoteAddress(socket) + " for " + queryString);
+          
+          String result = requestHandler.handle(queryString.substring(1));
           
           writeResultToOutputStream(socket.getOutputStream(), result);
           
@@ -72,6 +73,16 @@ public class WebServer implements Runnable {
 
     };
     thread.start();
+  }
+  
+  private String getQueryString(Socket socket) throws IOException {
+    String request = new BufferedReader(new InputStreamReader(socket.getInputStream())).readLine();
+    String[] requestParts = request.split(" ");
+    return requestParts[1];
+  }
+  
+  private String getRemoteAddress(Socket socket) {
+    return ((InetSocketAddress) socket.getRemoteSocketAddress()).getAddress().getCanonicalHostName();
   }
 
   private void writeResultToOutputStream(final OutputStream outputStream,
