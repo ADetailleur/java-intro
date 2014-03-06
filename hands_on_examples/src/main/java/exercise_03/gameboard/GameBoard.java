@@ -125,6 +125,7 @@ public class GameBoard {
       return;
     }
     
+    print("FIGHT: " + offender + " vs " + defender);
     offender.fightWith(defender);
     
     if (defender.isDead()) {
@@ -150,8 +151,6 @@ public class GameBoard {
     positionLookup.put(newPosition, element);
   }
   
-
-
   private boolean isFactionMember(GameBoardElement element) {
     return (element instanceof FactionMember);
   }
