@@ -58,11 +58,12 @@ public class WebServer implements Runnable {
       @Override
       public void run() {
         try {
-          String request = new BufferedReader(new InputStreamReader(
-              socket.getInputStream())).readLine();
+          String request = new BufferedReader(new InputStreamReader(socket.getInputStream())).readLine();
           String[] requestParts = request.split(" ");
           String result = requestHandler.handle(requestParts[1].substring(1));
+          
           writeResultToOutputStream(socket.getOutputStream(), result);
+          
           socket.close();
         } catch (IOException e) {
           e.printStackTrace();
