@@ -71,7 +71,7 @@ public class ThatsNoMoon extends Exercise02Base {
      * look as follows. (Certainly you need to replace the textual boolean
      * condition with real code!)
      * 
-     *    if (coordinates are larger than the window size) { 
+     *    if (<coordinates are larger than the window size>) { 
      *      speed = - speed; 
      *    }
      */

@@ -83,6 +83,10 @@ public abstract class Exercise02Base extends JApplet implements Runnable {
    * @return loaded icon, or null if there were problems loading it.
    */
   protected Image loadIcon() {
+    /*
+     * Icon by http://www.artua.com/, retrieved here:
+     * http://www.iconarchive.com/show/star-wars-icons-by-artua.html
+     */
     return new ImageLoader().loadIcon("moon.png");
   }
 
