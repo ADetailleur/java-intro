@@ -34,6 +34,10 @@ public class HelloWorldWebserver {
         
         // Return a random number from 0 to the number provided as query:
         // http://localhost:8080/38 would generate a number between 0 and 38.
+        // 
+        // Use this expression to convert the query string into an actual number: Integer.valueOf(query)
+        
+        
 
       }
 

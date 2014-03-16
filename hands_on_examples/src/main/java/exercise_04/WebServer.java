@@ -82,7 +82,7 @@ public class WebServer implements Runnable {
   }
   
   private String getRemoteAddress(Socket socket) {
-    return ((InetSocketAddress) socket.getRemoteSocketAddress()).getAddress().getCanonicalHostName();
+    return ((InetSocketAddress) socket.getRemoteSocketAddress()).getAddress().getHostAddress();
   }
 
   private void writeResultToOutputStream(final OutputStream outputStream,
