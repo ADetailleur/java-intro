@@ -53,3 +53,6 @@ A simple HTTP server which just returns some text. Can it be taught to give mean
 * Network code
 * Libraries
 
+### Exercise 05: My little simulation
+
+...
