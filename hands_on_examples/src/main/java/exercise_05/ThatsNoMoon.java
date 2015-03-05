@@ -3,7 +3,7 @@ package exercise_05;
 import java.awt.Graphics2D;
 import java.awt.Image;
 
-public class ThatsNoMoon extends Exercise02Base {
+public class ThatsNoMoon extends MoonBase {
 
   Image icon = loadIcon();
 
@@ -25,7 +25,6 @@ public class ThatsNoMoon extends Exercise02Base {
      */
 
 
-    
     
     
     

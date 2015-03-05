@@ -14,6 +14,6 @@ public class Program {
 		// to make the error go away.
 		
 //		String ronaldsName = ronald.getName();
-//		System.out.println(ronaldsName);
+//		System.out.println("Name: " + ronaldsName);
 	}
 }

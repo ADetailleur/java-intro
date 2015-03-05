@@ -18,28 +18,28 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 	 * Here we prepare the game board by adding all game players (aka elements).
 	 */
 	public void configureGame() {
-	  GameBoard gameBoard = getGameBoard();
-	  
-	  gameBoard.add(new Protagonist(new Position(3, 4)));
+		GameBoard gameBoard = getGameBoard();
+
+		gameBoard.add(new Protagonist(new Position(3, 4)));
 		gameBoard.add(new Robot(new Position(6, 4)));
-		
+
 		gameBoard.add(new Soldier(new Position(12, 6)));
 		gameBoard.add(new Soldier(new Position(13, 8)));
 		gameBoard.add(new Soldier(new Position(14, 7)));
+
+		/*
+		 * Add prop: - Create new class 'Rock' which implements the interface
+		 * 'GameBoardElement'. Let it use the 'rock.png' icon. You can use the
+		 * Soldier as example. Then, add it to the gameboard.
+		 */
+
 		
 		/*
-		 * Add prop:
-		 * - Create new class 'Rock' which implements the interface 'GameBoardElement'. 
-		 *   Let it use the 'rock.png' icon. You can use the Soldier as example.
-		 *   Then, add it to the gameboard.
+		 * Add antagonist: - Create new class 'Antagonist' which extends the
+		 * abstract class 'GalacticEmpireMember'. Let it use the
+		 * 'antagonist.png' icon. You can use the Soldier as example. Then, add
+		 * it to the gameboard.
 		 */
-		
-    /*
-     * Add antagonist:
-     * - Create new class 'Antagonist' which extends the abstract class 'GalacticEmpireMember'. 
-     *   Let it use the 'antagonist.png' icon. You can use the Soldier as example.
-     *   Then, add it to the gameboard.
-     */
 		
 	}
 

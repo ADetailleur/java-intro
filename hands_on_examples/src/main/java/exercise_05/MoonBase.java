@@ -13,7 +13,7 @@ import exercise_07.utils.ImageLoader;
 /**
  * Abstract base class for ThatsNoMoon which does all the heavy work.
  */
-public abstract class Exercise02Base extends JApplet implements Runnable {
+public abstract class MoonBase extends JApplet implements Runnable {
 
   private static final long serialVersionUID = 1L;
   private JPanel background;
