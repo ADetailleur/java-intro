@@ -1,4 +1,4 @@
-package example_08;
+package example_07;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,7 +33,7 @@ public class WebServer implements Runnable {
       serverSocket = new ServerSocket();
       serverSocket.bind(localAddress);
 
-      System.out.println("Webserver started on http://" + localAddress.getHostString() + ":" + localAddress.getPort());
+      System.out.println("Web server started on http://" + localAddress.getHostString() + ":" + localAddress.getPort());
 
       while (true) {
         Socket socket = serverSocket.accept();

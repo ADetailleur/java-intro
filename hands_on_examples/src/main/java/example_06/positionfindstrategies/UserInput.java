@@ -1,4 +1,4 @@
-package example_07.positionfindstrategies;
+package example_06.positionfindstrategies;
 
 /**
  * Indicating the direction where the user controlled character should move in the next round.

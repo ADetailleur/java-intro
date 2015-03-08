@@ -1,12 +1,12 @@
-package example_07.empire;
+package example_06.empire;
 
 import java.awt.Image;
 import java.util.Collection;
 
-import example_07.gameboard.GameBoardElement;
-import example_07.gameboard.Position;
-import example_07.positionfindstrategies.RandomNextPositionStrategy;
-import example_07.utils.ImageLoader;
+import example_06.gameboard.GameBoardElement;
+import example_06.gameboard.Position;
+import example_06.positionfindstrategies.RandomNextPositionStrategy;
+import example_06.utils.ImageLoader;
 
 public class Soldier extends GalacticEmpireMember {
 
@@ -18,22 +18,9 @@ public class Soldier extends GalacticEmpireMember {
   
   private static final int INITIAL_POWER = 10;
   
-  private Position position;
-  
-  
   public Soldier(Position position) {
-    this.position = position;
+    super(position);
     setPower(INITIAL_POWER);
-  }
-
-  @Override
-  public Position getCurrentPosition() {
-    return position;
-  }
-  
-  @Override
-  public void setPosition(Position position) {
-    this.position = position;
   }
 
   @Override
@@ -43,7 +30,7 @@ public class Soldier extends GalacticEmpireMember {
 
   @Override
   public Position calculateNextPosition(Collection<GameBoardElement> elements) {
-    return new RandomNextPositionStrategy().findNextPosition(position, elements);
+    return new RandomNextPositionStrategy().findNextPosition(getCurrentPosition(), elements);
   }
 
 }

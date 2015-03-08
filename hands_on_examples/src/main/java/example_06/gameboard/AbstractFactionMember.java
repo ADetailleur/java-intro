@@ -1,10 +1,15 @@
-package example_07.gameboard;
+package example_06.gameboard;
 
 
-public abstract class AbstractFactionMember implements FactionMember {
 
-  private int power;
-  
+public abstract class AbstractFactionMember extends AbstractGameBoardElement implements FactionMember {
+
+	private int power;
+	
+	public AbstractFactionMember(Position position) {
+		super(position);
+	}
+
   @Override
   public void fightWith(FactionMember f) {
     if (isInTheSameFaction(f)) {

@@ -1,11 +1,11 @@
-package example_07;
+package example_06;
 
-import example_07.alliance.Protagonist;
-import example_07.alliance.Robot;
-import example_07.empire.Soldier;
-import example_07.gameboard.GameBoard;
-import example_07.gameboard.Position;
-import example_07.positionfindstrategies.UserInput;
+import example_06.alliance.Protagonist;
+import example_06.alliance.Robot;
+import example_06.empire.Soldier;
+import example_06.gameboard.GameBoard;
+import example_06.gameboard.Position;
+import example_06.positionfindstrategies.UserInput;
 
 public class NotTheDroidsWeAreLookingFor extends GameBase {
   
@@ -28,9 +28,9 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 		gameBoard.add(new Soldier(new Position(14, 7)));
 
 		/*
-		 * Add prop: - Create new class 'Rock' which implements the interface
-		 * 'GameBoardElement'. Let it use the 'rock.png' icon. You can use the
-		 * Soldier as example. Then, add it to the gameboard.
+		 * Add prop: - Create new class 'Rock' which implements the class
+		 * 'AbstractGameBoardElement'. Let it use the 'rock.png' icon. You can use the
+		 * Soldier as example. Then, add it to the gameboard two or three times.
 		 */
 
 		
@@ -41,6 +41,12 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 		 * it to the gameboard.
 		 */
 		
+		
+		/*
+		 * If you are keen to improve the game you might try to create a new
+		 * position find strategy for the antagonist. For example one which
+		 * tries to decrease the distance to the enemy.
+		 */
 	}
 
 	/**
