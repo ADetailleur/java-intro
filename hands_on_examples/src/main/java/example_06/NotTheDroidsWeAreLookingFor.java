@@ -64,10 +64,15 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 	 * 
 	 * Implement some way to determine when the game is over. 
 	 * I'd propose to check if either the Protagonist or the Antagonist is not existing anymore.
+	 * 
+	 * Hint: You can get all game board elements from the game board: 
+	 *  
+	 *  getGameBoard().getAllElements()
+	 *  
 	 */
 	@Override
 	protected boolean isGameFinished() {
-	  return false;
+		return false;
 	}
 	
 	

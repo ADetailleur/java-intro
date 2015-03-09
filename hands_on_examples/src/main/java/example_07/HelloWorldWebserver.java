@@ -16,27 +16,23 @@ public class HelloWorldWebserver {
         // Currently, this web server just returns 'Hello', when you use a browser to surf to the page.
         return "Hello " + query;
 
+        
         // Make it a little more interesting:
-
-        // Return the current time. Can you find out how to do it? (Hint: There is a 'Date' class.)
-
-        
-        
-        
-        
-        
-        // Return a random number from 1 to 6 (a dice).
+        // 1. Return the current time. Can you find out how to do it? (Hint: There is a 'Date' class.)
 
         
         
         
+        // 2. Return a random number from 1 to 6 (a dice).
+
         
         
-        // Return a random number from 0 to the number provided as query:
-        // http://localhost:8080/38 would generate a number between 0 and 38.
+        
+        // 3. Return a random number from 0 to the number provided as query:
+        // 
+        // 		http://localhost:8080/38 would generate a number between 0 and 38.
         // 
         // Use this expression to convert the query string into an actual number: Integer.valueOf(query)
-        
         
 
       }
