@@ -1,4 +1,4 @@
-package example_07;
+package example_08;
 
 import java.io.BufferedReader;
 import java.io.IOException;

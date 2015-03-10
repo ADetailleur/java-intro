@@ -1,8 +1,8 @@
-package example_07;
+package example_08;
 
 import java.io.IOException;
 
-import example_07.WebServer.RequestHandler;
+import example_08.WebServer.RequestHandler;
 
 public class HelloWorldWebserver {
 

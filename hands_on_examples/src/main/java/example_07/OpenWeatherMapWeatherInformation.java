@@ -1,4 +1,4 @@
-package example_08;
+package example_07;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +24,11 @@ public class OpenWeatherMapWeatherInformation implements WeatherInformation {
 		
 		return temperatureKelvin - KELVIN_TRIPLE_POINT;
 	}
+	
+	
+	
+	
+
 	
 	
 	

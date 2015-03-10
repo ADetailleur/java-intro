@@ -17,7 +17,27 @@ The simplest of all simple programs should just show how to run Java programs.
 * Running a java program.
 
 
-### Exercise 01: That's no moon!
+### Example 01: A simple Person
+
+Demonstrates some properties of classes.
+
+#### Skills:
+* Creating new object instance
+* Creating methods
+* Return value
+* String concatenation
+
+
+### Example 02: A more elaborate Person
+
+Shows some more properties of types.
+
+#### Skills:
+* Branches
+* Arguments
+
+
+### Exercise 03: That's no moon!
 
 A graphical window with a single sprite in it. Can we move it?
 
@@ -27,16 +47,25 @@ A graphical window with a single sprite in it. Can we move it?
 * Some easy mathematics
 
 
-### Exercise 02: Web Crawling
+### Example 04: A Student is a Person
 
-Words are fetched from a website. They are supposed to be ordered by frequency of occurrence.
+First steps with inheritance. And lists.
 
-#### Skills:
-* Control structures: Loops
-* Interfaces, basic collections and sets
+#### Skills
+* Iterate over a list
+* Use method of super class.
 
 
-### Exercise 03: Not the droids we are looking for
+### Example 05: Frequent words
+
+We calculate the word length frequency table of the 1000 most common english words.
+
+#### Skills
+* Map manipulation
+* Basic logic
+
+
+### Example 06: Not the droids we are looking for
 
 A small game where we must avoid the evil troopers.
 
@@ -45,7 +74,16 @@ A small game where we must avoid the evil troopers.
 * Some creative thinking
 
 
-### Exercise 04: My first web server
+## Exercise 07: Fetch the weather
+
+Obtain JSON data from a internet weather source.
+
+#### Skills:
+* Implementing interface
+* Use of JSON objects and lists.
+
+
+### Exercise 08: My first web server
 
 A simple HTTP server which just returns some text. Can it be taught to give meaningful answers?
 
@@ -53,6 +91,7 @@ A simple HTTP server which just returns some text. Can it be taught to give mean
 * Network code
 * Libraries
 
-### Exercise 05: My little simulation
+
+### Exercise 09: My little simulation
 
 ...

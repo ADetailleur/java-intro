@@ -1,4 +1,4 @@
-package example_08;
+package example_07;
 
 public class Program {
 	
