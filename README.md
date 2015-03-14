@@ -74,7 +74,7 @@ A small game where we must avoid the evil troopers.
 * Some creative thinking
 
 
-## Exercise 07: Fetch the weather
+### Exercise 07: Fetch the weather
 
 Obtain JSON data from a internet weather source.
 
