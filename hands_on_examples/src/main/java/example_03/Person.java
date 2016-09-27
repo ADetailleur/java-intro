@@ -1,4 +1,4 @@
-package example_02;
+package example_03;
 
 public class Person {
 
@@ -18,4 +18,19 @@ public class Person {
 		return yearOfBirth;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
+	public String compareAgeWith(Person otherPerson) {
+		if (yearOfBirth < otherPerson.getYearOfBirth()) {
+			return "...";
+		}
+		else if (otherPerson.getYearOfBirth() < yearOfBirth) {
+			return "...";
+		}
+		else {
+			return "...";
+		}
+	}
 }
