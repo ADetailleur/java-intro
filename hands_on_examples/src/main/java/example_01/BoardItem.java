@@ -2,25 +2,26 @@ package example_01;
 
 import javafx.scene.image.Image;
 
-public class BoardItem {
+class BoardItem {
 	
-	private Image sprite;
-	private GameBoard gameBoard;
+	Image sprite;
+	GameBoard gameBoard;
 	
-	public BoardItem(String spritePath) {
+	BoardItem(GameBoard gameBoard, String spritePath) {
+		this.gameBoard = gameBoard;
 		sprite = getImageFrom(spritePath);
 	}
-	
-	public void setGameBoard(GameBoard gameBoard) {
-		this.gameBoard = gameBoard;
-	}
 
-	public Image getSprite() {
+	Image getSprite() {
 		return sprite;
 	}
 	
-	private Image getImageFrom(String path) {
+	Image getImageFrom(String path) {
 		return new Image(getClass().getClassLoader().getResource(path).toString());
+	}
+	
+	GameBoard getGameBoard() {
+		return gameBoard;
 	}
 
 }

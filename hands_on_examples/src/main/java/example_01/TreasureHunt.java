@@ -3,7 +3,6 @@ package example_01;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -13,23 +12,20 @@ public class TreasureHunt extends Application {
 
 	//---- Fields
 	
-	private int width = 7;
-	private int height = 7;
+	private static final int WIDTH = 7;
+	private static final int HEIGHT = 7;
 	
-	private GameBoard gameBoard = new GameBoard(width, height);
+	private GameBoard gameBoard = new GameBoard(this, WIDTH, HEIGHT);
 	
-	private BoardItem placeholder = new BoardItem("planetCute/placeholder.png");
-	private BoardItem grass = new BoardItem("planetCute/grass_block.png");
-	private BoardItem dirt = new BoardItem("planetCute/dirt_block.png");
-	private BoardItem rock = new BoardItem("planetCute/rock.png");
-	private BoardItem gem = new BoardItem("planetCute/gem_orange.png");
-	private BoardItem character = new BoardItem("planetCute/character_boy.png");
+	private BoardItem placeholder = new BoardItem(gameBoard, "planetCute/placeholder.png");
+	private BoardItem grass = new BoardItem(gameBoard, "planetCute/grass_block.png");
+	private BoardItem dirt = new BoardItem(gameBoard, "planetCute/dirt_block.png");
+	private BoardItem rock = new Rock(gameBoard);
+	private BoardItem gem = new BoardItem(gameBoard, "planetCute/gem_orange.png");
+	
+	private Avatar avatar = new Avatar(gameBoard, "planetCute/character_boy.png", "planetCute/character_boy.png", "planetCute/character_boy.png", "planetCute/character_boy.png");
 
 	private GridPane foreground;
-	
-	
-	
-	
 	
 	
 	//---- Methods
@@ -57,7 +53,8 @@ public class TreasureHunt extends Application {
         primaryStage.show();
         
         initializeGameBoard();
-        move();
+        
+        startMovement();
 	}
 	
 
@@ -65,16 +62,18 @@ public class TreasureHunt extends Application {
 	private void initializeGameBoard() {
 		gameBoard.addAt(rock, 2, 3);
 		gameBoard.addAt(gem, 0, 4);
-		gameBoard.addAt(character, 4, 0);
-				
+		gameBoard.setAvatarAt(avatar, 4, 0);
+		
+		redraw();
 	}
 	
-	private void move() {
-		
+	private void startMovement() {
+		gameBoard.startMovement();
+	}
+	
+	public void redraw() {
 		paintForegroundIn(foreground);
 	}
-
-
 
 	private GridPane createGridPane() {
 		GridPane gridpane = new GridPane();
@@ -86,8 +85,8 @@ public class TreasureHunt extends Application {
 	
 	public void initializeUndergroundIn(GridPane underground) {
 		// We pave the background with grass
-		for (int i = 0; i < width; i++) {
-			for (int j = 0; j < height; j++) {
+		for (int i = 0; i < WIDTH; i++) {
+			for (int j = 0; j < HEIGHT; j++) {
 				underground.add(new ImageView(dirt.getSprite()), j, i);
 			}
 		}	
@@ -95,8 +94,8 @@ public class TreasureHunt extends Application {
 
 	public void initializeBackgroundIn(GridPane background) {
 		// We pave the background with grass
-		for (int i = 0; i < width; i++) {
-			for (int j = 0; j < height; j++) {
+		for (int i = 0; i < WIDTH; i++) {
+			for (int j = 0; j < HEIGHT; j++) {
 				background.add(new ImageView(grass.getSprite()), j, i);
 			}
 		}	
@@ -105,13 +104,13 @@ public class TreasureHunt extends Application {
 	public void paintForegroundIn(GridPane gridPane) {
 		gridPane.getChildren().clear();
 		
-		for (int i = 0; i < width; i++) {
-			for (int j = 0; j < height; j++) {
+		for (int i = 0; i < WIDTH; i++) {
+			for (int j = 0; j < HEIGHT; j++) {
 				gridPane.add(new ImageView(placeholder.getSprite()), j, i);
 			}
 		}
-		for (int i = 0; i < width; i++) {
-			for (int j = 0; j < height; j++) {
+		for (int i = 0; i < WIDTH; i++) {
+			for (int j = 0; j < HEIGHT; j++) {
 				BoardItem boardItem = gameBoard.getItemFor(j, i);
 				if (boardItem != null) {
 					gridPane.add(new ImageView(boardItem.getSprite()), j, i);
@@ -120,14 +119,8 @@ public class TreasureHunt extends Application {
 		}	
 	}
 	
-	
-
 	public static void main(String[] args) {
         launch(args);
     }
-	
-	private Image getImageFrom(String path) {
-		return new Image(getClass().getClassLoader().getResource(path).toString());
-	}
  
 }
