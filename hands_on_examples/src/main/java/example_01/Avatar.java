@@ -79,6 +79,7 @@ class Avatar extends BoardItem {
 	}
 	
 	void moveInDirection(int steps) {
+		
 		// TODO
 	}
 
