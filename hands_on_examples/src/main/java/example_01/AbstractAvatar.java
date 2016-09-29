@@ -35,27 +35,13 @@ abstract class AbstractAvatar extends BoardItem {
 
 	abstract void move();
 
-	
-	
-
-
-
-	
-
-	
-	
-
 	boolean isObstacleAhead() {
 		return isObstacleInDirection(direction);
 	}
 
-
-
 	boolean isObstacleRight() {
 		return isObstacleInDirection(direction + 1 % directions.length);
 	}
-
-
 
 	boolean isObstacleLeft() {
 		return isObstacleInDirection(direction - 1 % directions.length);
@@ -110,16 +96,13 @@ abstract class AbstractAvatar extends BoardItem {
 	}
 	
 	void updateDirectionBy(int directionDelta) {
-		direction = (direction + directionDelta) % directions.length;
+		direction = Math.floorMod(direction + directionDelta, directions.length);
 	}
-
-
 	
 	@Override
 	Image getSprite() {
 		return sprites[direction];
 	}
-	
 	
 	void finishMove() {
 		getGameBoard().redraw();

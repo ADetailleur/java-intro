@@ -20,7 +20,9 @@ class Avatar extends AbstractAvatar {
 		turnLeft();
 		turnLeft();
 		moveForwards();
-		
+		moveForwards();
+		turnRight();
+		moveForwards();
 		
 		
 		
