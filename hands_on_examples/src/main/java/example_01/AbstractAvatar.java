@@ -88,19 +88,13 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 		return gem != null;
 	}
 
-	void moveBackwards() {
-		log("Move backwards");
-		moveInDirection(-1);
-		finishMove();
-	}
-
 	void moveForwards() {
 		log("Move forwards");
-		moveInDirection(1);
+		moveInDirection();
 		finishMove();
 	}
 	
-	void moveInDirection(int steps) {
+	void moveInDirection() {
 		switch (directions[direction]) {
 		case TOP:
 			getGameBoard().moveNorth((Avatar) this);

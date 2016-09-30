@@ -8,7 +8,6 @@ class Avatar extends AbstractAvatar {
 	 *  void turnLeft();
 	 *	void turnRight();
 	 *	void moveForwards();
-	 *	void moveBackwards();
 	 *	
 	 *	boolean isObstacleLeft();
 	 *	boolean isObstacleRight();
