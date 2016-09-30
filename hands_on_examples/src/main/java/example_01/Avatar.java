@@ -5,14 +5,15 @@ class Avatar extends AbstractAvatar {
 	/**
 	 * Add your commands in this method inside the curly braces { .. }:
 	 * 
-	 *  turnLeft();
-	 *	turnRight();
-	 *	moveForwards();
-	 *	moveBackwards();
+	 *  void turnLeft();
+	 *	void turnRight();
+	 *	void moveForwards();
+	 *	void moveBackwards();
 	 *	
-	 *	isObstacleLeft();
-	 *	isObstacleRight();
-	 *	isObstacleAhead();
+	 *	boolean isObstacleLeft();
+	 *	boolean isObstacleRight();
+	 *	boolean isObstacleAhead();
+	 *  boolean hasGem();
 	 *
 	 *
 	 * The game performs this 'move' method once before evaluating the outcome.
@@ -22,6 +23,7 @@ class Avatar extends AbstractAvatar {
 
 		// Write your movement program here! For example, start with a step forwards:
 		moveForwards();
+
 		
 	}
 	
@@ -33,7 +35,7 @@ class Avatar extends AbstractAvatar {
 	 */
 	@Override
 	long getSleepTimeInMilliSeconds() {
-		return 1000;
+		return 100;
 	}
 	
 	

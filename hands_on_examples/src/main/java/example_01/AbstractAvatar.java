@@ -83,6 +83,10 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 			throw new IllegalArgumentException("No known direction");
 		}
 	}
+	
+	boolean hasGem() {
+		return gem != null;
+	}
 
 	void moveBackwards() {
 		log("Move backwards");

@@ -39,6 +39,9 @@ abstract class AbstractTreasureHunt extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
+		primaryStage.setOnCloseRequest((event) -> System.exit(0));
+		
 		StackPane stackPane = new StackPane();
 		
 		GridPane underground = createGridPane();
