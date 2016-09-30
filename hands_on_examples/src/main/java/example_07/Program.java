@@ -1,11 +1,11 @@
-package example_08;
+package example_07;
 
 public class Program {
 	
 	public static void main(String[] args) {
 	
 		WeatherInformation weatherInformation = new OpenWeatherMapWeatherInformation();
-		double temperature = weatherInformation.getTemperatureFor("Zurich");
+		double temperature = weatherInformation.getTemperatureFor("Zurich City, CH");
 		
 		System.out.println("Temperature in Zurich: " + temperature);
 	}

@@ -1,11 +1,11 @@
-package example_07.positionfindstrategies;
+package example_08.positionfindstrategies;
 
 import java.util.Collection;
 import java.util.Random;
 
-import example_07.gameboard.FindNextPositionStrategy;
-import example_07.gameboard.GameBoardElement;
-import example_07.gameboard.Position;
+import example_08.gameboard.FindNextPositionStrategy;
+import example_08.gameboard.GameBoardElement;
+import example_08.gameboard.Position;
 
 public class RandomNextPositionStrategy implements FindNextPositionStrategy {
 

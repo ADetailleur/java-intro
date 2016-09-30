@@ -1,4 +1,4 @@
-package example_07.gameboard;
+package example_08.gameboard;
 
 
 public abstract class AbstractGameBoardElement implements GameBoardElement {

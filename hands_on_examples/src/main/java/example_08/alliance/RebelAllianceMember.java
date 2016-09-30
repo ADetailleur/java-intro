@@ -1,7 +1,7 @@
-package example_07.alliance;
+package example_08.alliance;
 
-import example_07.gameboard.AbstractFactionMember;
-import example_07.gameboard.Position;
+import example_08.gameboard.AbstractFactionMember;
+import example_08.gameboard.Position;
 
 public abstract class RebelAllianceMember extends AbstractFactionMember {
 

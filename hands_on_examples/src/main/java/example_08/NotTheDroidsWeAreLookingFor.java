@@ -1,11 +1,11 @@
-package example_07;
+package example_08;
 
-import example_07.alliance.Protagonist;
-import example_07.alliance.Robot;
-import example_07.empire.Soldier;
-import example_07.gameboard.GameBoard;
-import example_07.gameboard.Position;
-import example_07.positionfindstrategies.UserInput;
+import example_08.alliance.Protagonist;
+import example_08.alliance.Robot;
+import example_08.empire.Soldier;
+import example_08.gameboard.GameBoard;
+import example_08.gameboard.Position;
+import example_08.positionfindstrategies.UserInput;
 
 public class NotTheDroidsWeAreLookingFor extends GameBase {
   

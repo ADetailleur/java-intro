@@ -8,7 +8,7 @@ import java.awt.Image;
 import javax.swing.JApplet;
 import javax.swing.JPanel;
 
-import example_07.utils.ImageLoader;
+import example_08.utils.ImageLoader;
 
 /**
  * Abstract base class for ThatsNoMoon which does all the heavy work.
@@ -69,7 +69,7 @@ public abstract class MoonBase extends JApplet implements Runnable {
         drawImageOn(g2);
       }
     };
-
+    background.setDoubleBuffered(true);
     add(background);
     configureWindow();
 

@@ -1,9 +1,9 @@
-package example_07;
+package example_08;
 
-import static example_07.positionfindstrategies.UserInput.DOWN;
-import static example_07.positionfindstrategies.UserInput.LEFT;
-import static example_07.positionfindstrategies.UserInput.RIGHT;
-import static example_07.positionfindstrategies.UserInput.UP;
+import static example_08.positionfindstrategies.UserInput.DOWN;
+import static example_08.positionfindstrategies.UserInput.LEFT;
+import static example_08.positionfindstrategies.UserInput.RIGHT;
+import static example_08.positionfindstrategies.UserInput.UP;
 import static java.awt.event.KeyEvent.VK_DOWN;
 import static java.awt.event.KeyEvent.VK_KP_DOWN;
 import static java.awt.event.KeyEvent.VK_KP_LEFT;
@@ -28,12 +28,12 @@ import java.util.Random;
 import javax.swing.JApplet;
 import javax.swing.JPanel;
 
-import example_07.gameboard.FactionMember;
-import example_07.gameboard.GameBoard;
-import example_07.gameboard.GameBoardElement;
-import example_07.gameboard.Position;
-import example_07.positionfindstrategies.UserInput;
-import example_07.utils.ImageLoader;
+import example_08.gameboard.FactionMember;
+import example_08.gameboard.GameBoard;
+import example_08.gameboard.GameBoardElement;
+import example_08.gameboard.Position;
+import example_08.positionfindstrategies.UserInput;
+import example_08.utils.ImageLoader;
 
 /**
  * Abstract base class for NotTheDroidsWeAreLookingFor which does all the heavy work.

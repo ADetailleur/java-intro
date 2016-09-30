@@ -1,6 +1,6 @@
-package example_07.gameboard;
+package example_08.gameboard;
 
-import example_07.positionfindstrategies.UserInput;
+import example_08.positionfindstrategies.UserInput;
 
 public interface UserControlled {
 

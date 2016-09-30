@@ -1,14 +1,14 @@
-package example_07.alliance;
+package example_08.alliance;
 
 import java.awt.*;
 import java.util.Collection;
 
-import example_07.gameboard.GameBoardElement;
-import example_07.gameboard.Position;
-import example_07.gameboard.UserControlled;
-import example_07.positionfindstrategies.UserInput;
-import example_07.positionfindstrategies.UserInputPositionStrategy;
-import example_07.utils.ImageLoader;
+import example_08.gameboard.GameBoardElement;
+import example_08.gameboard.Position;
+import example_08.gameboard.UserControlled;
+import example_08.positionfindstrategies.UserInput;
+import example_08.positionfindstrategies.UserInputPositionStrategy;
+import example_08.utils.ImageLoader;
 
 /**
  * This is the hero of the game.

@@ -1,4 +1,4 @@
-package example_07.gameboard;
+package example_08.gameboard;
 
 /**
  * Faction members belong to a faction, and are able to fight with each other.

@@ -1,11 +1,11 @@
-package example_07.alliance;
+package example_08.alliance;
 
 import java.awt.Image;
 import java.util.Collection;
 
-import example_07.gameboard.GameBoardElement;
-import example_07.gameboard.Position;
-import example_07.utils.ImageLoader;
+import example_08.gameboard.GameBoardElement;
+import example_08.gameboard.Position;
+import example_08.utils.ImageLoader;
 
 /**
  * The friendly helpers of the protagonist.
