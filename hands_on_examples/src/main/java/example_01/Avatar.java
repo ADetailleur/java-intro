@@ -35,7 +35,7 @@ class Avatar extends AbstractAvatar {
 	 */
 	@Override
 	long getSleepTimeInMilliSeconds() {
-		return 100;
+		return 1000;
 	}
 	
 	
