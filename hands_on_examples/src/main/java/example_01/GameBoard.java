@@ -3,15 +3,12 @@ package example_01;
 import java.util.ArrayList;
 import java.util.List;
 
-import example_01.GameBoard.Position;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
-import javafx.scene.image.ImageView;
-
-
 class GameBoard {
 
+	//---- Fields
+	
+	boolean gameOver = false;
+	String gameOverMessage = "";
 	List<BoardItem> items = new ArrayList<>();
 	BoardItem[][] board;
 	AbstractTreasureHunt treasureHunt;
@@ -19,12 +16,18 @@ class GameBoard {
 	int width;
 	int height;
 	
+	
+	//---- Constructor
+	
 	GameBoard(AbstractTreasureHunt treasureHunt, int width, int height) {
 		this.treasureHunt = treasureHunt;
 		this.width = width;
 		this.height = height;
 		board = new BoardItem[width][height];
 	}
+	
+	
+	//---- Methods
 	
 	void addAt(BoardItem boardItem, Position position) {
 		addAt(boardItem, position.x, position.y);
@@ -78,14 +81,20 @@ class GameBoard {
 		return isObstacleTranslatedOf(boardItem, 0, 1);
 	}
 
-	boolean isObstacleWesthOf(BoardItem boardItem) {
+	boolean isObstacleWestOf(BoardItem boardItem) {
 		return isObstacleTranslatedOf(boardItem, -1, 0);
 	}
 	
 	boolean isObstacleTranslatedOf(BoardItem boardItem, int xTrans, int yTrans) {
 		Position position = getPositionOf(boardItem);
-		BoardItem item = getItemFor(position.x + xTrans, position.y + yTrans);
-		return item == null || item instanceof Rock;
+		Position newPosition = position.translateBy(xTrans, yTrans);
+		
+		if (!isOnBoard(newPosition)) {
+			return true;
+		}
+		
+		BoardItem item = getItemFor(newPosition);
+		return item instanceof Rock;
 	}
 
 	Position getPositionOf(BoardItem boardItem) {
@@ -153,5 +162,19 @@ class GameBoard {
 			return new Position(x + xTrans,  y + yTrans);
 		}
 	}
+	
+	void setGameOverWith(String message) {
+		gameOver = true;
+		this.gameOverMessage = message;
+	}
+
+	boolean isGameOver() {
+		return gameOver;
+	}
+
+	String getGameOverMessage() {
+		return gameOverMessage;
+	}
+	
 
 }

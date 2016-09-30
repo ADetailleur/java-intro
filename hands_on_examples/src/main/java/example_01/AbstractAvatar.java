@@ -38,6 +38,15 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 	@Override
 	public void run() {
 		move();
+		
+		// At the end of the move we check if we were successful.
+		if (gem != null) {
+			getGameBoard().setGameOverWith("You win!");
+		}
+		else {
+			getGameBoard().setGameOverWith("You failed!");
+		}
+		redraw();
 	}
 	
 	abstract void move();
@@ -63,13 +72,13 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 	boolean isObstacleInDirection(int direction) {
 		switch (directions[direction]) {
 		case TOP:
-			return gameBoard.isObstacleNorthOf(this);
+			return getGameBoard().isObstacleNorthOf(this);
 		case RIGHT:
-			return gameBoard.isObstacleEastOf(this);
+			return getGameBoard().isObstacleEastOf(this);
 		case BOTTOM:
-			return gameBoard.isObstacleSouthOf(this);
+			return getGameBoard().isObstacleSouthOf(this);
 		case LEFT:
-			return gameBoard.isObstacleWesthOf(this);
+			return getGameBoard().isObstacleWestOf(this);
 		default:
 			throw new IllegalArgumentException("No known direction");
 		}
@@ -90,16 +99,16 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 	void moveInDirection(int steps) {
 		switch (directions[direction]) {
 		case TOP:
-			gameBoard.moveNorth((Avatar) this);
+			getGameBoard().moveNorth((Avatar) this);
 			break;
 		case RIGHT:
-			gameBoard.moveEast((Avatar) this);
+			getGameBoard().moveEast((Avatar) this);
 			break;
 		case BOTTOM:
-			gameBoard.moveSouth((Avatar) this);
+			getGameBoard().moveSouth((Avatar) this);
 			break;
 		case LEFT:
-			gameBoard.moveWest((Avatar) this);
+			getGameBoard().moveWest((Avatar) this);
 			break;
 		}
 	}
@@ -136,11 +145,17 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 	
 	void finishMove() {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(getSleepTimeInMilliSeconds());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		Platform.runLater(() -> getGameBoard().redraw()); 
+		redraw();
 	}
+	
+	void redraw() {
+		Platform.runLater(() -> getGameBoard().redraw());
+	}
+	
+	abstract long getSleepTimeInMilliSeconds();
 	
 }

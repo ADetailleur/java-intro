@@ -14,18 +14,41 @@ class Avatar extends AbstractAvatar {
 	 *	isObstacleRight();
 	 *	isObstacleAhead();
 	 *
+	 *
+	 * The game performs this 'move' method once before evaluating the outcome.
+	 *
 	 */
 	void move() {
-		
-		turnLeft();
-		turnLeft();
+
+		// Write your movement program here! For example, start with a step forwards:
 		moveForwards();
-		moveForwards();
-		turnRight();
-		moveForwards();
-		
 		
 	}
+	
+	
+	
+	/**
+	 * The return value of this method determines the break between each operation (e.g. 'turnLeft()') in the move method. 
+	 * If it's too slow for you, set a shorter value, e.g. 200.
+	 */
+	@Override
+	long getSleepTimeInMilliSeconds() {
+		return 1000;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -50,8 +73,8 @@ class Avatar extends AbstractAvatar {
 	/**
 	 * Ignore below.
 	 */
-	Avatar(GameBoard gameBoard, String upSprite, String downSprite, String leftSprite, String rightSprite) {
-		super(gameBoard, upSprite, downSprite, leftSprite, rightSprite);
+	Avatar(GameBoard gameBoard) {
+		super(gameBoard, "planetCute/character_up.png", "planetCute/character_down.png", "planetCute/character_left.png", "planetCute/character_right.png");
 	}
 
 }

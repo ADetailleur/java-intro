@@ -4,14 +4,22 @@ import javafx.scene.image.Image;
 
 class BoardItem {
 	
+	//---- Fields
+	
 	Image sprite;
 	GameBoard gameBoard;
+	
+	
+	//---- Constructor
 	
 	BoardItem(GameBoard gameBoard, String spritePath) {
 		this.gameBoard = gameBoard;
 		sprite = getImageFrom(spritePath);
 	}
 
+	
+	//---- Methods
+	
 	Image getSprite() {
 		return sprite;
 	}
