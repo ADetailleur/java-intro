@@ -30,14 +30,6 @@ public class OpenWeatherMapWeatherInformation implements WeatherInformation {
 	}
 	
 	
-	private String encode(String s) {
-		try {
-			return URLEncoder.encode(s, "utf-8");
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	
 	/* These are helper functions. */
 	
 	private String getDataFrom(String address) {
@@ -60,6 +52,14 @@ public class OpenWeatherMapWeatherInformation implements WeatherInformation {
 		}
 		
 		return null;
+	}
+	
+	private String encode(String s) {
+		try {
+			return URLEncoder.encode(s, "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 	private String convertStreamToString(java.io.InputStream is) {
