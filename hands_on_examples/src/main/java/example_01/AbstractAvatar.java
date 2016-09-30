@@ -10,6 +10,7 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 	Direction[] directions = new Direction[] { Direction.TOP, Direction.RIGHT, Direction.BOTTOM, Direction.LEFT };
 	Image[] sprites;
 	int direction = 0;
+	private Gem gem;
 	
 	enum Direction { 
 		TOP(0), RIGHT(1), BOTTOM(2), LEFT(3);
@@ -89,16 +90,16 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 	void moveInDirection(int steps) {
 		switch (directions[direction]) {
 		case TOP:
-			gameBoard.moveNorth(this);
+			gameBoard.moveNorth((Avatar) this);
 			break;
 		case RIGHT:
-			gameBoard.moveEast(this);
+			gameBoard.moveEast((Avatar) this);
 			break;
 		case BOTTOM:
-			gameBoard.moveSouth(this);
+			gameBoard.moveSouth((Avatar) this);
 			break;
 		case LEFT:
-			gameBoard.moveWest(this);
+			gameBoard.moveWest((Avatar) this);
 			break;
 		}
 	}
@@ -113,6 +114,11 @@ abstract class AbstractAvatar extends BoardItem implements Runnable {
 		log("Turn right");
 		updateDirectionBy(+1);
 		finishMove();
+	}
+	
+	void pickUp(Gem gem) {
+		this.gem = gem;
+		log("Picked up gem");
 	}
 	
 	void log(String message) {

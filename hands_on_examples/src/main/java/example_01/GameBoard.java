@@ -41,50 +41,51 @@ class GameBoard {
 		items.remove(boardItem);
 	}
 	
-	public BoardItem getItemFor(int x, int y) {
+	BoardItem getItemFor(Position position) {
+		return getItemFor(position.x, position.y);
+	}
+	
+	BoardItem getItemFor(int x, int y) {
 		return board[x][y];
 	}
 	
-	public void moveAvatarTo(AbstractAvatar avatar, int x, int y) {
-		
+	boolean hasItem(Position position) {
+		return getItemFor(position) != null;
 	}
 
-	public void startMovement() {
-		
+	void startMovement() {
 		new Thread(avatar).start();
-		
-//		avatar.move();
 	}
 	
-	public void redraw() {
+	void redraw() {
 		treasureHunt.redraw();
 	}
 
-	public void setAvatarAt(AbstractAvatar avatar, int x, int y) {
+	void setAvatarAt(AbstractAvatar avatar, int x, int y) {
 		this.avatar = avatar;
 		addAt(avatar, x, y);
 	}
 
 	boolean isObstacleNorthOf(BoardItem boardItem) {
-		return isObstacleTranslatedOf(0, -1, boardItem);
+		return isObstacleTranslatedOf(boardItem, 0, -1);
 	}
 
 	boolean isObstacleEastOf(BoardItem boardItem) {
-		return isObstacleTranslatedOf(1, 0, boardItem);
+		return isObstacleTranslatedOf(boardItem, 1, 0);
 	}
 
 	boolean isObstacleSouthOf(BoardItem boardItem) {
-		return isObstacleTranslatedOf(0, 1, boardItem);
+		return isObstacleTranslatedOf(boardItem, 0, 1);
 	}
 
 	boolean isObstacleWesthOf(BoardItem boardItem) {
-		return isObstacleTranslatedOf(-1, 0, boardItem);
+		return isObstacleTranslatedOf(boardItem, -1, 0);
 	}
 	
-	boolean isObstacleTranslatedOf(int xTrans, int yTrans, BoardItem boardItem) {
+	boolean isObstacleTranslatedOf(BoardItem boardItem, int xTrans, int yTrans) {
 		Position position = getPositionOf(boardItem);
 		BoardItem item = getItemFor(position.x + xTrans, position.y + yTrans);
-		return item instanceof Obstacle;
+		return item == null || item instanceof Rock;
 	}
 
 	Position getPositionOf(BoardItem boardItem) {
@@ -98,33 +99,45 @@ class GameBoard {
 		return null;
 	}
 	
-	void moveNorth(BoardItem boardItem) {
-		moveBy(boardItem, 0, -1);
+	void moveNorth(Avatar avatar) {
+		moveBy(avatar, 0, -1);
 	}
 	
-	void moveEast(BoardItem boardItem) {
-		moveBy(boardItem, 1, 0);
+	void moveEast(Avatar avatar) {
+		moveBy(avatar, 1, 0);
 	}
 	
-	void moveSouth(BoardItem boardItem) {
-		moveBy(boardItem, 0, 1);
+	void moveSouth(Avatar avatar) {
+		moveBy(avatar, 0, 1);
 	}
 	
-	void moveWest(BoardItem boardItem) {
-		moveBy(boardItem, -1, 0);
+	void moveWest(Avatar avatar) {
+		moveBy(avatar, -1, 0);
 	}
 	
-	void moveBy(BoardItem boardItem, int xTrans, int yTrans) {
-		Position position = getPositionOf(boardItem);
+	void moveBy(Avatar avatar, int xTrans, int yTrans) {
+		Position position = getPositionOf(avatar);
 		Position newPosition = position.translateBy(xTrans, yTrans);
 		if (isValid(newPosition)) {
-			remove(boardItem);
-			addAt(boardItem, newPosition);
+			remove(avatar);
+			if (hasItem(newPosition) && getItemFor(newPosition) instanceof Gem) {
+				avatar.pickUp((Gem) getItemFor(newPosition));
+			}
+			
+			addAt(avatar, newPosition);
 		}
 	}
 	
 	boolean isValid(Position position) {
+		return isOnBoard(position) && isPassable(position);
+	}
+	
+	boolean isOnBoard(Position position) {
 		return 0 <= position.x && position.x < width && 0 <= position.y && position.y < height;
+	}
+	
+	boolean isPassable(Position position) {
+		return !(board[position.x][position.y] instanceof Rock) ;
 	}
 
 	class Position {

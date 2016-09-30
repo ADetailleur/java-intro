@@ -20,8 +20,8 @@ abstract class AbstractTreasureHunt extends Application {
 	private BoardItem placeholder = new BoardItem(gameBoard, "planetCute/placeholder.png");
 	private BoardItem grass = new BoardItem(gameBoard, "planetCute/grass_block.png");
 	private BoardItem dirt = new BoardItem(gameBoard, "planetCute/dirt_block.png");
-	private BoardItem rock = new Rock(gameBoard);
-	private BoardItem gem = new BoardItem(gameBoard, "planetCute/gem_orange.png");
+	private Rock rock = new Rock(gameBoard);
+	private Gem gem = new Gem(gameBoard);
 	
 	private Avatar avatar = new Avatar(gameBoard, "planetCute/character_boy.png", "planetCute/character_boy.png", "planetCute/character_boy.png", "planetCute/character_boy.png");
 
