@@ -1,8 +1,9 @@
 package example_01;
 
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 
-abstract class AbstractAvatar extends BoardItem {
+abstract class AbstractAvatar extends BoardItem implements Runnable {
 	
 	//---- Fields
 	
@@ -33,18 +34,29 @@ abstract class AbstractAvatar extends BoardItem {
 	
 	//---- Methods
 
+	@Override
+	public void run() {
+		move();
+	}
+	
 	abstract void move();
 
 	boolean isObstacleAhead() {
-		return isObstacleInDirection(direction);
+		boolean result = isObstacleInDirection(direction);
+		log("Is obstacle ahead: " + result);
+		return result;
 	}
 
 	boolean isObstacleRight() {
-		return isObstacleInDirection(direction + 1 % directions.length);
+		boolean result = isObstacleInDirection(direction + 1 % directions.length);
+		log("Is obstacle right: " + result);
+		return result;
 	}
 
 	boolean isObstacleLeft() {
-		return isObstacleInDirection(direction - 1 % directions.length);
+		boolean result = isObstacleInDirection(direction - 1 % directions.length);
+		log("Is obstacle left: " + result);
+		return result;
 	}
 	
 	boolean isObstacleInDirection(int direction) {
@@ -63,11 +75,13 @@ abstract class AbstractAvatar extends BoardItem {
 	}
 
 	void moveBackwards() {
+		log("Move backwards");
 		moveInDirection(-1);
 		finishMove();
 	}
 
 	void moveForwards() {
+		log("Move forwards");
 		moveInDirection(1);
 		finishMove();
 	}
@@ -76,23 +90,33 @@ abstract class AbstractAvatar extends BoardItem {
 		switch (directions[direction]) {
 		case TOP:
 			gameBoard.moveNorth(this);
+			break;
 		case RIGHT:
 			gameBoard.moveEast(this);
+			break;
 		case BOTTOM:
 			gameBoard.moveSouth(this);
+			break;
 		case LEFT:
 			gameBoard.moveWest(this);
+			break;
 		}
 	}
 
 	void turnLeft() {
+		log("Turn left");
 		updateDirectionBy(-1);
 		finishMove();
 	}
 
 	void turnRight() {
+		log("Turn right");
 		updateDirectionBy(+1);
 		finishMove();
+	}
+	
+	void log(String message) {
+		System.out.println(message);
 	}
 	
 	void updateDirectionBy(int directionDelta) {
@@ -105,7 +129,12 @@ abstract class AbstractAvatar extends BoardItem {
 	}
 	
 	void finishMove() {
-		getGameBoard().redraw();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Platform.runLater(() -> getGameBoard().redraw()); 
 	}
 	
 }

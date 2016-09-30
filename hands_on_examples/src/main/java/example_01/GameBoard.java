@@ -50,39 +50,14 @@ class GameBoard {
 	}
 
 	public void startMovement() {
-		avatar.move();
+		
+		new Thread(avatar).start();
+		
+//		avatar.move();
 	}
 	
 	public void redraw() {
-		
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
 		treasureHunt.redraw();
-		
-//		Task<Void> sleeper = new Task<Void>() {
-//			@Override
-//			protected Void call() throws Exception {
-//				try {
-//					Thread.sleep(1000);
-//				} catch (InterruptedException e) {
-//				}
-//				return null;
-//			}
-//		};
-//
-//		sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
-//			@Override
-//			public void handle(WorkerStateEvent event) {
-//				treasureHunt.redraw();
-//			}
-//		});
-//		new Thread(sleeper).start();
-
 	}
 
 	public void setAvatarAt(AbstractAvatar avatar, int x, int y) {

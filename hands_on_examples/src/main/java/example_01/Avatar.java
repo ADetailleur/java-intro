@@ -28,7 +28,6 @@ class Avatar extends AbstractAvatar {
 		
 		
 		
-		
 	}
 	
 	
