@@ -24,7 +24,7 @@ A playful introduction to control structures.
 #### Skills:
 
 * Method calls
-* Controll structures
+* Control structures
 
 
 ### Example 02: A simple Person
