@@ -11,6 +11,7 @@ public class Program {
 	public static void main(String[] args) {
 		
 		// This prints every word of the wordlist
+		System.out.println("Word list:");
 		for (String word : commonWordList) {
 			System.out.println(word + " (Length: " + word.length() + ")");
 		} 
