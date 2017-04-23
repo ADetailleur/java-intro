@@ -24,6 +24,12 @@ class Avatar extends AbstractAvatar {
 		moveForwards();
 
 		
+
+		
+		
+		
+		
+		
 	}
 	
 	
