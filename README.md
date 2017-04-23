@@ -17,7 +17,17 @@ The simplest of all simple programs should just show how to run Java programs.
 * Running a java program.
 
 
-### Example 01: A simple Person
+### Example 01: Treasure Hunt
+
+A playful introduction to control structures.
+
+#### Skills:
+
+* Method calls
+* Controll structures
+
+
+### Example 02: A simple Person
 
 Demonstrates some properties of classes.
 
@@ -28,7 +38,7 @@ Demonstrates some properties of classes.
 * String concatenation
 
 
-### Example 02: A more elaborate Person
+### Example 03: A more elaborate Person
 
 Shows some more properties of types.
 
@@ -37,7 +47,7 @@ Shows some more properties of types.
 * Arguments
 
 
-### Exercise 03: That's no moon!
+### Exercise 04: That's no moon!
 
 A graphical window with a single sprite in it. Can we move it?
 
@@ -47,7 +57,7 @@ A graphical window with a single sprite in it. Can we move it?
 * Some easy mathematics
 
 
-### Example 04: A Student is a Person
+### Example 05: A Student is a Person
 
 First steps with inheritance. And lists.
 
@@ -56,7 +66,7 @@ First steps with inheritance. And lists.
 * Use method of super class.
 
 
-### Example 05: Frequent words
+### Example 06: Frequent words
 
 We calculate the word length frequency table of the 1000 most common english words.
 
@@ -65,7 +75,15 @@ We calculate the word length frequency table of the 1000 most common english wor
 * Basic logic
 
 
-### Example 06: Not the droids we are looking for
+### Exercise 07: Fetch the weather
+
+Obtain JSON data from a internet weather source and create command line program with it.
+
+#### Skills:
+* Create executable jar file and execute it on the command line.
+
+
+### Example 08: Not the droids we are looking for
 
 A small game where we must avoid the evil troopers.
 
@@ -74,24 +92,10 @@ A small game where we must avoid the evil troopers.
 * Some creative thinking
 
 
-### Exercise 07: Fetch the weather
-
-Obtain JSON data from a internet weather source.
-
-#### Skills:
-* Implementing interface
-* Use of JSON objects and lists.
-
-
-### Exercise 08: My first web server
+### Exercise 09: My first web server
 
 A simple HTTP server which just returns some text. Can it be taught to give meaningful answers?
 
 #### Skills:
 * Network code
 * Libraries
-
-
-### Exercise 09: My little simulation
-
-...
