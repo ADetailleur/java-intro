@@ -82,10 +82,7 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
   public void displayFinalResult() {
     drawText("GAME OVER");
   }
-	
-	
-	private static final long serialVersionUID = 1L;
-	
+
 	public static void main(String[] args) {
 		start();
 	}
