@@ -1,5 +1,7 @@
 package example_07;
 
+import java.util.Optional;
+
 public class Program {
 	
 	public static void main(String[] args) {
@@ -13,9 +15,13 @@ public class Program {
 		}
 	
 		WeatherInformation weatherInformation = new OpenWeatherMapWeatherInformation();
-		double temperature = weatherInformation.getTemperatureFor(location);
-		
-		System.out.println("Temperature in '" + location + "': " + temperature + " °C");
+		Optional<Double> temperature = weatherInformation.getTemperatureFor(location);
+		if (temperature.isPresent()) {
+			System.out.println("Temperature in '" + location + "': " + temperature.get() + " °C");
+		}
+		else {
+			System.out.println("Place not found");
+		}
 	}
 	
 }

@@ -1,11 +1,13 @@
 package example_07;
 
+import java.util.Optional;
+
 public interface WeatherInformation {
 
 	/**
-	 * Returns the temperature in celsius for the city provided as argument.
+	 * Returns the temperature in Celsius for the city provided as argument.
 	 */
-	public double getTemperatureFor(String city);
+	Optional<Double> getTemperatureFor(String city);
 	
 	// ...
 }
