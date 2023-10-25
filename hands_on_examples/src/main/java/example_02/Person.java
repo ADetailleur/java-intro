@@ -17,5 +17,9 @@ public class Person {
 	public int getYearOfBirth() {
 		return yearOfBirth;
 	}
-	
+
+	public String getName() {
+		return this.name;
+	}
+
 }

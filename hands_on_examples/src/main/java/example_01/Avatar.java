@@ -1,5 +1,7 @@
 package example_01;
 
+import java.util.Random;
+
 class Avatar extends AbstractAvatar {
 	
 	/**
@@ -21,7 +23,21 @@ class Avatar extends AbstractAvatar {
 	void move() {
 
 		// Write your movement program here! For example, start with a step forwards:
-		moveForwards();
+		Random coinToss = new Random();
+		while (!hasGem()) {
+
+			boolean coinHead = coinToss.nextBoolean();
+
+			if (coinHead) {
+				turnRight();
+			}
+			else {
+				turnLeft();
+			}
+			moveForwards();
+		}
+
+
 
 		
 
@@ -40,7 +56,7 @@ class Avatar extends AbstractAvatar {
 	 */
 	@Override
 	long getSleepTimeInMilliSeconds() {
-		return 1000;
+		return 50;
 	}
 	
 	

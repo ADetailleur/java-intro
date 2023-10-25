@@ -13,7 +13,7 @@ public class Program {
 		// Then, add the new method to the 'Person' class
 		// to make the error go away.
 		
-//		String ronaldsName = ronald.getName();
-//		System.out.println("Name: " + ronaldsName);
+		String ronaldsName = ronald.getName();
+		System.out.println("Name: " + ronaldsName);
 	}
 }

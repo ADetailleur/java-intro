@@ -23,14 +23,14 @@ public class Person {
 	}
 	
 	public String compareAgeWith(Person otherPerson) {
-		if (yearOfBirth < otherPerson.getYearOfBirth()) {
-			return "...";
+		if (yearOfBirth > otherPerson.getYearOfBirth()) {
+			return name + " is younger than " + otherPerson.getName();
 		}
-		else if (otherPerson.getYearOfBirth() < yearOfBirth) {
-			return "...";
+		else if (otherPerson.getYearOfBirth() > yearOfBirth) {
+			return otherPerson.getName() + " is younger than " + name;
 		}
 		else {
-			return "...";
+			return this.getName() + " is the same age as " + otherPerson.getName();
 		}
 	}
 }
