@@ -4,8 +4,11 @@ import example_08.alliance.Protagonist;
 import example_08.alliance.Robot;
 import example_08.empire.Soldier;
 import example_08.gameboard.GameBoard;
+import example_08.gameboard.GameBoardElement;
 import example_08.gameboard.Position;
 import example_08.positionfindstrategies.UserInput;
+
+import java.util.ArrayList;
 
 public class NotTheDroidsWeAreLookingFor extends GameBase {
   
@@ -72,6 +75,9 @@ public class NotTheDroidsWeAreLookingFor extends GameBase {
 	 */
 	@Override
 	protected boolean isGameFinished() {
+
+		// ArrayList<GameBoardElement> allElements = getGameBoard().getAllElements();
+
 		return false;
 	}
 	

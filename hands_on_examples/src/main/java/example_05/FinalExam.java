@@ -9,6 +9,8 @@ public class FinalExam {
 	private int currentYear = new GregorianCalendar().get(Calendar.YEAR);
 	
 	private ArrayList<Student> applicants = new ArrayList<>();
+
+	private ArrayList<Student> eligibleApplicants = new ArrayList<>();
 	
 	public void applyForFinalExam(Student student) {
 		applicants.add(student);
@@ -27,7 +29,14 @@ public class FinalExam {
 		
 		// Your task:
 		// Print all applicants which are eligible for the final exam.
-		
+		System.out.println("The students eligible for the final exam are:");
+
+		for (Student student : applicants) {
+			if (isEligibleForFinalExam(student)) {
+				eligibleApplicants.add(student);
+				System.out.println(student.getName());
+			}
+		}
 		
 	}
 	

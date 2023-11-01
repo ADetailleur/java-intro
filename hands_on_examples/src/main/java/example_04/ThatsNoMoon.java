@@ -6,6 +6,11 @@ import java.awt.Image;
 public class ThatsNoMoon extends MoonBase {
 
   Image icon = loadIcon();
+  int verticalSpeed = 0;
+  int horizontalSpeed = 0;
+
+  boolean rightDirection = true;
+  boolean downDirection = false;
 
   int iconCoordinateX = 100;
   int iconCoordinateY = 50;
@@ -24,7 +29,37 @@ public class ThatsNoMoon extends MoonBase {
      *    iconCoordinateX += 1;
      */
 
-	  
+	  // Get heights and width
+      int iconWidth = icon.getWidth(null);
+      int windowWidth = getWidth();
+      int windowHeight = getHeight();
+
+      // Make sure icon is within bounds
+
+      if (iconCoordinateY > windowHeight || iconCoordinateY < 0) {
+        downDirection = !downDirection;
+      }
+
+
+      // increase speed
+      if (downDirection) {
+        verticalSpeed = verticalSpeed - 1;
+      }
+      else {
+        verticalSpeed = verticalSpeed + 1;
+      }
+
+
+
+      // update movement
+      iconCoordinateX += horizontalSpeed;
+      iconCoordinateY += verticalSpeed;
+
+
+
+
+
+
     
     
     

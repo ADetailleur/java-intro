@@ -25,6 +25,19 @@ public class WordLengthFrequencyCounter {
 		// Check if there is already an entry for the word length in the map.
 		// If yes: Increment its counter.
 		// If no: Create an entry.
+
+		for (String word : wordList) {
+			int length = word.length();
+
+			if (!getFrequencyTable().containsKey(length)) {
+				frequencyTable.put(length, 1);
+			}
+			else {
+				int currentValue = frequencyTable.get(length);
+				frequencyTable.put(length, currentValue + 1);
+			}
+		}
+
 	}
 
 	
